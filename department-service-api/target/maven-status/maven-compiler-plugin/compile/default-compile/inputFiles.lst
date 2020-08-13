@@ -1,0 +1,3 @@
+/home/config/test/spring-boot-kubernetes/department-service-api/src/main/java/client/DepartmentServiceFeignConfiguration.java
+/home/config/test/spring-boot-kubernetes/department-service-api/src/main/java/client/DepartmentClient.java
+/home/config/test/spring-boot-kubernetes/department-service-api/src/main/java/client/Department.java
