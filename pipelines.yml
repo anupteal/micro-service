@@ -33,3 +33,7 @@ pipelines:
              - name: myAppRepo  
            integrations:
              - name: myArtifactory 
+       execution:
+            onStart:
+              - javac -version
+              - mvn  --version
