@@ -10,6 +10,8 @@ resources:
    type: BuildInfo
    configuration:
       sourceArtifactory: myArtifactory
+      buildNumber:
+      buildName:
 
 pipelines:
  - name: pipeline_hello_world
