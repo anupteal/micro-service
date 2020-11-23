@@ -33,4 +33,12 @@ pipelines:
              - name: myAppRepo  
            integrations:
              - name: myArtifactory 
+           runtime:
+             type: image
+             image:
+               auto:
+                 language: java
+                 version:
+                    - "1"
+
 
