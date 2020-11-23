@@ -1,26 +1,26 @@
 resources
  - name: myAppRepo
    type: GitRepo
-	 configuration:
-	  gitProvider: GitHubAcc
-	  path: anupteal/micro-service
-	  branches:
-	    include: javacode
+   configuration:
+     gitProvider: GitHubAcc
+     path: anupteal/micro-service
+     branches:
+        include: javacode
 		
 pipelines:
  - name: pipeline_hello_world
    configuration:
-	 environmentVariables:
-	     readOnly:
-		   MY_MESSAGE: "Hello Anup"
-	 steps:
-	    - name: step1
-		  type: Bash
-		  configuration:
-		    inputResources:
-			  - name: myAppRepo
-		  execution:
-		    onExecute:
-			  - echo $MY_MESSAGE
-			  - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
+      environmentVariables:
+         readOnly:
+	   MY_MESSAGE: "Hello Anup"
+   steps:
+     - name: step1
+       type: Bash
+       configuration:
+          inputResources:
+            - name: myAppRepo
+       execution:
+         onExecute:
+	    - echo $MY_MESSAGE
+	    - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
 	  
