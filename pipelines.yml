@@ -23,8 +23,6 @@ pipelines:
           mvnCommand: clean install
           configFileLocation: .
           configFileName: pom.xml
-          inputResources:
-             - name: myAppRepo
           integrations:
              - name: myArtifactory
        execution:
