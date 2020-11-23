@@ -6,6 +6,11 @@ resources:
      path: anupteal/micro-service
      branches:
         include: javacode		
+ - name: build_info
+   type: BuildInfo
+   configuration:
+      sourceArtifactory: myArtifactory
+
 pipelines:
  - name: pipeline_hello_world
    configuration:
