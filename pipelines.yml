@@ -32,7 +32,7 @@ pipelines:
            sourceLocation: department-service
            mvnCommand: clean install
            configFileLocation: . 
-           configFileName: .
+           #           configFileName: .
            inputResources:
              - name: myAppRepo  
            integrations:
