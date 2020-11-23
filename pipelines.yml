@@ -19,13 +19,13 @@ pipelines:
        configuration:
           inputResources:
             - name: myAppRepo
-           sourceLocation: dependencyState/resources/myAppRepo/department-service/
-           mvnCommand: clean install
-           configFileLocation: .
-           configFileName: pom.xml
-           inputResources:
+          sourceLocation: dependencyState/resources/myAppRepo/department-service/
+          mvnCommand: clean install
+          configFileLocation: .
+          configFileName: pom.xml
+          inputResources:
              - name: myAppRepo
-           integrations:
+          integrations:
              - name: myArtifactory
        execution:
          onExecute:
