@@ -23,7 +23,7 @@ pipelines:
          onExecute:
             - echo $MY_MESSAGE
             - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
-            - pwd  
+            - pwd && ls -lrth 
      - name: compilation
        type: MvnBuild
        configuration:
