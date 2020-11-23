@@ -31,3 +31,6 @@ pipelines:
            configFileName: pom.xml
            inputResources:
              - name: myAppRepo  
+           integrations:
+             - name: GitHubAcc    
+
