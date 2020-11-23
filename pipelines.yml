@@ -2,7 +2,7 @@ resources
  - name: myAppRepo
    type: GitRepo
 	 configuration:
-	  gitProvider: MyGitHun
+	  gitProvider: GitHubAcc
 	  path: anupteal/micro-service
 	  branches:
 	    include: javacode
