@@ -27,3 +27,7 @@ pipelines:
        configuration:
            sourceLocation: .
            mvnCommand: clean install
+           configFileLocation: 
+           configFileName:
+           inputResources:
+           integrations:
