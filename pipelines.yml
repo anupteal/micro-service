@@ -39,6 +39,6 @@ pipelines:
                auto:
                  language: java
                  version:
-                    - "1"
+                    - "11"
 
 
