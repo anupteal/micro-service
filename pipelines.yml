@@ -26,7 +26,7 @@ pipelines:
      - name: compilation
        type: MvnBuild
        configuration:
-           sourceLocation: pom.xml
+           sourceLocation: .
            mvnCommand: clean install
            configFileLocation: . 
            configFileName: pom.xml
