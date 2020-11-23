@@ -27,8 +27,7 @@ pipelines:
        configuration:
            sourceLocation: .
            mvnCommand: clean install
-           configFileLocation: 
-           configFileName:
+           configFileLocation: . 
+           configFileName: pom.xml
            inputResources:
              - name: myAppRepo  
-           integrations:
