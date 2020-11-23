@@ -5,8 +5,7 @@ resources
      gitProvider: GitHubAcc
      path: anupteal/micro-service
      branches:
-        include: javacode
-		
+        include: javacode		
 pipelines:
  - name: pipeline_hello_world
    configuration:
