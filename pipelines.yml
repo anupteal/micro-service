@@ -32,5 +32,5 @@ pipelines:
            inputResources:
              - name: myAppRepo  
            integrations:
-             - name: GitHubAcc    
+             - name: micro    
 
