@@ -33,7 +33,7 @@ pipelines:
            inputResources:
              - name: myAppRepo  
            integrations:
-             - name: GitHubAcc 
+             - name: myArtifactory 
        execution:
             onStart:
               - javac -version
