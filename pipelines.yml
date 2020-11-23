@@ -27,7 +27,7 @@ pipelines:
      - name: compilation
        type: MvnBuild
        configuration:
-           sourceLocation: .
+           sourceLocation: dependencyState/resources/myAppRepo/department-service/pom.xml
            mvnCommand: clean install
            configFileLocation: . 
            configFileName: pom.xml
