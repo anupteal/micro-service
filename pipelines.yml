@@ -6,12 +6,6 @@ resources:
      path: anupteal/micro-service
      branches:
         include: javacode		
- - name: app_build_info
-   type: BuildInfo
-   configuration:
-      sourceArtifactory: myArtifactory
-      buildNumber: "2"
-      buildName: "Depart"
 
 pipelines:
  - name: pipeline_hello_world
@@ -39,7 +33,7 @@ pipelines:
            inputResources:
              - name: myAppRepo  
            integrations:
-             - name: myArtifactory 
+             - name: GitHubAcc 
        execution:
             onStart:
               - javac -version
