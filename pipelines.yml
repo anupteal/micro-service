@@ -30,4 +30,5 @@ pipelines:
            configFileLocation: 
            configFileName:
            inputResources:
+             - name: myAppRepo  
            integrations:
