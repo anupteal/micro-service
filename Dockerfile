@@ -1,7 +1,7 @@
 # Maven build container 
 
-#FROM maven:3.5.2-jdk-8-alpine AS maven_build
-FROM distroless.jfrog.io/test1/maven
+FROM maven:3.5.2-jdk-8-alpine AS maven_build
+#FROM distroless.jfrog.io/test1/maven
 
 COPY pom.xml /tmp/
 
