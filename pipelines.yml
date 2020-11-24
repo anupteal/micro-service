@@ -38,7 +38,7 @@ pipelines:
           affinityGroup: dbp_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: distroless.jfrog.io/test1/Hello  # replace with your image path and name
+          dockerImageName: distroless.jfrog.io/test1/hello  # replace with your image path and name
           dockerImageTag: ${run_number}
           inputResources:
             - name: myAppRepo
