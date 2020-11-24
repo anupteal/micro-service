@@ -25,12 +25,17 @@ pipelines:
             - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
             - pwd && ls -lrth workspace && find / -iname "pom.xml" 
      - name: compilation
-       type: Bash
+       type: MvnBuild
        configuration:
+           sourceLocation: .
+           mvnCommand: clean install
+           configFileLocation: .
+           configFileName: pom.xml
            inputResources:
              - name: myAppRepo  
+           integrations:
+             - name: myArtifactory 
        execution:
-            onExecute:
+            onStart:
               - javac -version
               - mvn  --version
-              - docker build -t="hello-world-java" .
