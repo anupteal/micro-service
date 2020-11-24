@@ -31,8 +31,8 @@ pipelines:
        configuration:
            sourceLocation: department-service
            mvnCommand: clean install
-           configFileLocation: department-service/src/main/resources 
-           configFileName: application.yml
+           configFileLocation: department-service 
+           configFileName: pom.xml
            inputResources:
              - name: myAppRepo  
            integrations:
