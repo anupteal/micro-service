@@ -14,7 +14,7 @@ pipelines:
          readOnly:
             MY_MESSAGE: "Hello Anup"
    steps:
-     - name: step1
+     - name: Build
        type: Bash
        configuration:
           inputResources:
