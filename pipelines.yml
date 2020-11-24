@@ -31,7 +31,7 @@ pipelines:
        configuration:
            sourceLocation: department-service
            mvnCommand: clean install
-           configFileLocation: dependencyState/resources/myAppRepo/department-service 
+           configFileLocation: myAppRepo/department-service 
            configFileName: pom.xml
            inputResources:
              - name: myAppRepo  
