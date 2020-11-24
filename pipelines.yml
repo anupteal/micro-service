@@ -5,15 +5,15 @@ resources:
      gitProvider: GitHubAcc
      path: anupteal/micro-service
      branches:
-        include: javacode		
- - name: dbp_image
-   type: Image
-   configuration:
-      registry: distroless.jfrog.io      # replace with your Artifactory integration
-      sourceRepository: test1   # required if registry is Artifactory
-      imageName: distroless.jfrog.io/test1/maven  # replace with your image path and name
-      imageTag: latest
-      autoPull: true 
+        include: javacode	
+ # - name: dbp_image
+ #   type: Image
+ # configuration:
+ #    registry: distroless.jfrog.io      # replace with your Artifactory integration
+ #    sourceRepository: test1   # required if registry is Artifactory
+ #    imageName: distroless.jfrog.io/test1/maven  # replace with your image path and name
+ #    imageTag: latest
+ #    autoPull: true 
 
 pipelines:
  - name: pipeline_hello_world
@@ -38,10 +38,10 @@ pipelines:
           affinityGroup: dbp_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: distroless.jfrog.io/test1/maven  # replace with your image path and name
+          dockerImageName: distroless.jfrog.io/test1/Hello  # replace with your image path and name
           dockerImageTag: ${run_number}
           inputResources:
-            - name: dbp_repo
+            - name: myAppRepo
           integrations:
             - name: myArtifactory    # replace with your artifactory integration
  
@@ -55,4 +55,4 @@ pipelines:
           inputSteps:
             - name: docker_build
           outputResources:
-            - name: dbp_image
+            - name: myAppRepo
