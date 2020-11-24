@@ -24,14 +24,12 @@ pipelines:
             - echo $MY_MESSAGE
             - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
             - pwd && ls -lrth workspace && find / -iname "pom.xml" 
-            - javac -version
-            - mvn --version  
      - name: compilation
        type: MvnBuild
        configuration:
            sourceLocation: department-service
            mvnCommand: clean install
-           configFileLocation: myAppRepo/department-service 
+           configFileLocation: department-service/pom.xml
            configFileName: pom.xml
            inputResources:
              - name: myAppRepo  
