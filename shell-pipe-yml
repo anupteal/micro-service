@@ -1,0 +1,28 @@
+resources:
+ - name: myAppRepo
+   type: GitRepo
+   configuration:
+     gitProvider: GitHubAcc
+     path: anupteal/micro-service
+     branches:
+        include: javacode		
+
+pipelines:
+ - name: pipeline_hello_world
+   configuration:
+      environmentVariables:
+         readOnly:
+            MY_MESSAGE: "Hello Anup"
+   steps:
+     - name: Build
+       type: Bash
+       configuration:
+          inputResources:
+            - name: myAppRepo
+       execution:
+         onExecute:
+            - echo $MY_MESSAGE
+            - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
+            - pwd; find / -iname "pom.xml"
+            - cd dependencyState/resources/myAppRepo; docker build -t="hello-world-java" . 
+            - pwd

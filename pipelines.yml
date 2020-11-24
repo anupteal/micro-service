@@ -6,6 +6,14 @@ resources:
      path: anupteal/micro-service
      branches:
         include: javacode		
+ - name: dbp_image
+   type: Image
+   configuration:
+      registry: distroless.jfrog.io      # replace with your Artifactory integration
+      sourceRepository: test1   # required if registry is Artifactory
+      imageName: distroless.jfrog.io/test1/maven  # replace with your image path and name
+      imageTag: latest
+      autoPull: true 
 
 pipelines:
  - name: pipeline_hello_world
@@ -23,6 +31,28 @@ pipelines:
          onExecute:
             - echo $MY_MESSAGE
             - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
-            - pwd; find / -iname "pom.xml"
             - cd dependencyState/resources/myAppRepo; docker build -t="hello-world-java" . 
-            - pwd
+     - name: docker_build
+       type: DockerBuild
+       configuration:
+          affinityGroup: dbp_group
+          dockerFileLocation: .
+          dockerFileName: Dockerfile
+          dockerImageName: distroless.jfrog.io/test1/maven  # replace with your image path and name
+          dockerImageTag: ${run_number}
+          inputResources:
+            - name: dbp_repo
+          integrations:
+            - name: myArtifactory    # replace with your artifactory integration
+ 
+     - name: docker_push
+       type: DockerPush
+       configuration:
+          affinityGroup: dbp_group
+          targetRepository: test1
+          integrations:
+            - name: myArtifactory    # replace with your artifactory integration
+          inputSteps:
+            - name: docker_build
+          outputResources:
+            - name: dbp_image
